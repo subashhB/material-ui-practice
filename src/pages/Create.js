@@ -1,7 +1,9 @@
 import React from 'react'
 import Typography from '@mui/material/Typography';
-import {Button} from '@mui/material';
+import {Button, makeStyles} from '@mui/material';
 import { Container } from '@mui/system';
+import { KeyboardArrowRight } from '@mui/icons-material';
+
 
 const Create = () => {
   return (
@@ -18,9 +20,12 @@ const Create = () => {
         type='Submit' 
         color='secondary' 
         variant='contained'
+        endIcon={<KeyboardArrowRight/>}
       >
         SUBMIT
       </Button>
+      <br/>
+
     </Container>
   )
 }
