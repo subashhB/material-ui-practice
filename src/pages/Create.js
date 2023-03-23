@@ -1,33 +1,50 @@
 import React from 'react'
-import Typography from '@mui/material/Typography';
-import {Button, makeStyles} from '@mui/material';
-import { Container } from '@mui/system';
-import { KeyboardArrowRight } from '@mui/icons-material';
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+import Container from '@material-ui/core/Container'
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
+import { makeStyles } from '@material-ui/core'
 
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 60,
+    backgroundColor: 'violet',
+    '&:hover': {
+      background: 'blue'
+    },
+  },
+  title: {
+    textDecoration: 'underline',
+    marginBottom: 20,
+  }
+})
 
-const Create = () => {
+export default function Create() {
+  const classes = useStyles()
+
   return (
-    <Container>
+    <Container size="sm">
       <Typography
-          variant='h6'
-          component='h2'
-          color='textSecondary'
+        className={classes.title}
+        variant="h6" 
+        color="textSecondary"
+        component="h2"
+        gutterBottom
       >
-          Create a New Note
+        Create a New Note
       </Typography>
-      <Button 
-        onClick={() =>{console.log('You Clicked Me!')}}
-        type='Submit' 
-        color='secondary' 
-        variant='contained'
-        endIcon={<KeyboardArrowRight/>}
-      >
-        SUBMIT
-      </Button>
-      <br/>
 
+      <Button
+        className={classes.btn}
+        onClick={() => console.log('you clicked me')}
+        type="submit" 
+        color="secondary" 
+        variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}>
+        Submit
+      </Button>
+
+      
     </Container>
   )
 }
-
-export default Create
