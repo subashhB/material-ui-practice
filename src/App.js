@@ -3,6 +3,7 @@ import Notes from './pages/Notes'
 import Create from './pages/Create'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import {purple} from '@material-ui/core/colors';
+import TextField from '@material-ui/core/TextField';
 
 const theme = createMuiTheme({
   palette:{
